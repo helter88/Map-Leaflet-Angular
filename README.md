@@ -7,15 +7,15 @@ Showing how to implement basic OpenStreetMap
 - npm install npm install @types/leaflet
   
 2. dodać style do angular.json:
-'''ts
+```ts
 "styles": [
   "node_modules/leaflet/dist/leaflet.css",
   "node_modules/leaflet-control-geocoder/dist/Control.Geocoder.css"
 ]
- '''
+```
 
 3. Dodać LeafletModule do importów w app.module.ts:
-'''ts
+```ts
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
@@ -23,5 +23,5 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     LeafletModule
   ]
 })
- '''
+```
  4. Dodać odpowiedni kod w html ts i scss
