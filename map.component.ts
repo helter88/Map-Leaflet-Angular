@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as L from 'leaflet';
+import 'leaflet-control-geocoder';
 
 @Component({
   selector: 'app-map',
@@ -31,16 +32,16 @@ export class MapComponent {
     }).addTo(this.map);
 
     // Dodanie kontrolki wyszukiwania
-    // const geocoder = (L as any).Control.Geocoder.nominatim();
-    // (L as any).Control.geocoder({
-    //   geocoder: geocoder,
-    //   defaultMarkGeocode: false
-    // })
-    // .on('markgeocode', (e: any) => {
-    //   const { center } = e.geocode;
-    //   this.map.setView(center, this.currentZoom);
-    // })
-    // .addTo(this.map);
+    const geocoder = (L as any).Control.Geocoder.nominatim();
+    (L as any).Control.geocoder({
+      geocoder: geocoder,
+      defaultMarkGeocode: false
+    })
+    .on('markgeocode', (e: any) => {
+      const { center } = e.geocode;
+      this.map.setView(center, this.currentZoom);
+    })
+    .addTo(this.map);
 
     // Dodanie warstwy znaczników
     this.markersLayer.addTo(this.map);
