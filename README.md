@@ -7,7 +7,7 @@ Showing how to implement basic OpenStreetMap
 - npm install npm install @types/leaflet
   
 2. dodać style do angular.json:
-'''TypeScript
+'''ts
 "styles": [
   "node_modules/leaflet/dist/leaflet.css",
   "node_modules/leaflet-control-geocoder/dist/Control.Geocoder.css"
@@ -15,7 +15,7 @@ Showing how to implement basic OpenStreetMap
  '''
 
 3. Dodać LeafletModule do importów w app.module.ts:
-'''TypeScript
+'''ts
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
